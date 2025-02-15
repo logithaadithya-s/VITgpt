@@ -6,7 +6,7 @@ h1{
     padding:0px;
     font-size:20px;
     width:100%;
-}/*
+}
 nav.fi{
     margin:0;
     color:white;
@@ -70,4 +70,8 @@ span.mail{
 }
 footer{
     background-color: #E2E2B6;
-}*/
+}
+body,h1{
+    margin:0;
+    padding:0;
+}
