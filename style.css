@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+}
+.mainnavcontent{
+    display:flex;
+    flex-direction:row;
+    list-style:none;
+    gap:4vw;
+    font-size:2vh;
+    justify-content:flex-end;
+    padding-right:0vw;
+    padding:1.2vw;
+    padding-left: 27vw;
+    color: rgba(255, 255, 255, 0.8);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.mainheading{
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    display: flex;
+    opacity:0.7;
+    width:100vw;
+    height:9vh;
+    color:white;
+    z-index:1000;
+}
+.vitgptlogo{
+    width:10vw;
+    height:6vh;
+    padding:1vw;
+    padding-top:0.5vw;
+}
+.mainnavbar{
+    flex-basis:auto;
+}
+.sandwech{
+    display:none;
+}
+@media (max-width:1025px){
+    .vitgptlogo{
+        width:18vw;
+        height:6vh;
+        padding:1vw;
+        padding-top:0.5vw;
+    }
+    .mainnavcontent {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 50%;
+        padding: 10px;
+        color:black;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+        opacity:1;
+    }
+    .navinner>a{
+        color:black;
+    }
+    .mainnavcontent li {
+        padding: 10px;
+        text-align: center;
+    }
+    .sandwech{
+        display:block;
+        padding-left: 72vw;
+    }
+    .mainnavcontent li:hover {
+        color:black; 
+    }
+}
+@media (max-width:1150px){
+    .vitgptlogo{
+        width:16vw;
+        height:6vh;
+        padding:1vw;
+        padding-top:0.5vw;
+    }
+}
+.navback{
+    background-color: black;
+    height:9vh;
+    width:100vw;
+}
+.downcontent{
+    display: flex;
+    list-style:none;
+    flex-direction:row;
+    justify-content: flex-end;
+    gap:10vw;
+    color:white;
+    background-color: #243642;
+    padding-right:10vw;
+    padding-top:1vh;
+    height:4vh;
+}
+.bot{
+    position:fixed;
+    z-index:100;
+    top:90vh;
+    left:92vw;
+}
+.profile{
+    padding-bottom:2vh;
+}
+.mainnavcontent li:hover {
+    color: #f8f8f8; 
+}
+.navinner{
+    padding-top:1vh;
+}
+.quotesimg{
+    width:100vw;
+    height:70vh;
+    padding:0;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.commonsubject{
+    background-color: #9AA6B2;
+    margin:0;
+    width:100vw;
+    height:18vh;
+}
+.commonsubjecthd{
+    text-align: center;
+    color:white;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight:600;
+    padding:1vw;
+}
+.commonsub{
+    border:1px solid rgb(6, 130, 246);
+    border-radius:50px;
+    background-color: rgb(6, 130, 246);
+    padding:0.7vw;
+    background-image: url(https://gimgs2.nohat.cc/thumb/f/640/frames-school-supplies-education-school-transparent-background-png-clipart--comhiclipartdekwg.jpg);
+}
+.commonbuttons{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap:3vw;
+    color:white;
+
+}
