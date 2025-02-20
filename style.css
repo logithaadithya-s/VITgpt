@@ -68,6 +68,7 @@
     }
     .sandwech{
         display:block;
+        padding-top:1.2vh;
         padding-left: 72vw;
     }
     .mainnavcontent li:hover {
