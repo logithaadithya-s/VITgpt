@@ -95,10 +95,11 @@
     justify-content: flex-end;
     gap:10vw;
     color:white;
-    background-color: #243642;
+    background-color: #1a202c;
     padding-right:10vw;
     padding-top:1vh;
     height:4vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .bot{
     position:fixed;
@@ -110,7 +111,7 @@
     padding-bottom:2vh;
 }
 .mainnavcontent li:hover {
-    color: #f8f8f8; 
+m  color: #f8f8f8; 
 }
 .navinner{
     padding-top:1vh;
@@ -129,21 +130,19 @@ a{
     background-color: #9AA6B2;
     margin:0;
     width:100vw;
-    height:18vh;
+    height:80vh;
 }
 .commonsubjecthd{
     text-align: center;
     color:white;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight:600;
+    font-weight:900;
+    font-size:4vh;
     padding:1vw;
+    padding-top:2vw;
 }
 .commonsub{
-    border:1px solid rgb(6, 130, 246);
-    border-radius:50px;
-    background-color: rgb(6, 130, 246);
-    padding:0.7vw;
-    background-image: url(https://gimgs2.nohat.cc/thumb/f/640/frames-school-supplies-education-school-transparent-background-png-clipart--comhiclipartdekwg.jpg);
+    overflow:hidden;
 }
 .commonbuttons{
     display: flex;
@@ -152,4 +151,120 @@ a{
     gap:3vw;
     color:white;
 
+}
+.vitlinks{
+    background-color:black;
+    color:#ffffff;
+    width:100vw;
+    height:17vh;
+}
+.vitlinkbuttons{
+    border-radius:3vw;
+    text-decoration: none;
+    border:none;
+    padding:1vw;
+    background-color: rgb(5, 88, 130);
+}
+.vitlinkbuttons:hover{
+    transform:scale(1.07);
+    box-shadow:0 6px 12px rgba(0, 0, 0, 0.3);
+    opacity:0.8;
+}
+.vitlink{
+    padding:5vw;
+    font-size:2vh;
+    color:#f8f8f895;
+}
+.vitlinkbuttons:hover .vitlink{
+    color:#ffffff;
+    filter: brightness(200%);
+    font-weight: 500;
+}
+.linkbuttons{
+    display: flex;
+    justify-content: center;
+    gap:1vw;
+    padding:1vw;
+}
+.vitportals{
+    text-align:center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3.4vh;
+    padding-top:1vw;
+}
+.commonimg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+.commonsub {
+    display:inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commonsub:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.commonsubimg {
+    width: 310px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+}
+.commonsub:hover .commonsubimg {
+    opacity: 0.8;
+    filter: brightness(90%);
+}    
+footer {
+    background-color: #1a202c;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-section p, .footer-section ul {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+.footer-section ul {
+    list-style: none;
+}
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
 }
