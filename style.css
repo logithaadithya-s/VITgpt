@@ -88,18 +88,73 @@
     height:9vh;
     width:100vw;
 }
-.downcontent{
+.downcontent {
     display: flex;
-    list-style:none;
-    flex-direction:row;
+    list-style: none;
+    flex-direction: row;
     justify-content: flex-end;
-    gap:10vw;
-    color:white;
-    background-color: #1a202c;
-    padding-right:10vw;
-    padding-top:1vh;
-    height:4vh;
+    align-items: center; /* Center items vertically */
+    gap: 10vw;
+    color: black;
+    background-color: #D3D3D3;
+    padding-right: 10vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh; /* Add padding at the bottom for better spacing */
+    height: auto; /* Make height flexible */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.downcontent li a {
+    color: #1a202c;
+    font-weight: 600;
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth hover effects */
+}
+
+.downcontent li a:hover {
+    color: #4a5568; /* Change color on hover */
+    transform: translateY(-2px); /* Add a slight lift effect on hover */
+}
+
+/* Add a subtle underline effect on hover */
+.downcontent li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #4a5568;
+    transition: width 0.3s ease-in-out;
+}
+
+.downcontent li a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .downcontent {
+        justify-content: center; /* Center items on smaller screens */
+        gap: 5vw; /* Reduce gap for smaller screens */
+        padding-right: 5vw; /* Reduce padding for smaller screens */
+        padding-left: 5vw; /* Add left padding for balance */
+    }
+
+    .downcontent li a {
+        font-size: 14px; /* Slightly reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .downcontent {
+        flex-direction: column; /* Stack items vertically on mobile */
+        gap: 2vh; /* Reduce gap for vertical layout */
+        padding-top: 2vh; /* Adjust padding for vertical layout */
+        padding-bottom: 2vh;
+    }
+
+    .downcontent li a {
+        font-size: 16px; /* Slightly increase font size for better readability */
+    }
 }
 .bot{
     position:fixed;
@@ -111,160 +166,331 @@
     padding-bottom:2vh;
 }
 .mainnavcontent li:hover {
-m  color: #f8f8f8; 
+    color: #f8f8f8; 
 }
 .navinner{
     padding-top:1vh;
 }
 .quotesimg{
-    width:100vw;
+    width:80vw;
     height:70vh;
-    padding:0;
-    display: block;
+    border-radius:1px solid white;
+    border-radius:10%;
+}
+.maininnerimg{
+    padding-left:10vw;
+    padding-right:10vw;
+    padding-top:10vh;
+    padding-bottom:10vh;
+}
+.mainimg{
+    background-image:url(https://img.freepik.com/premium-vector/education-pattern-background-doodle-style_660381-2541.jpg) ;
 }
 a{
     text-decoration: none;
     color:white;
 }
-.commonsubject{
-    background-color: #9AA6B2;
-    margin:0;
-    width:100vw;
-    height:80vh;
+/* General button container */
+.commonbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    color: white;
+}
+
+/* Container for VIT links */
+.vitlinks {
+    background-color: #9d9d9d;
+    color: black;
+    width: 100%;
+    height: auto; /* Make height flexible */
+    padding: 2vh 0; /* Add padding for better spacing */
+}
+
+/* Style for VIT link buttons */
+.vitlinkbuttons {
+    border-radius: 2.5vw; /* Slightly rounded corners */
+    text-decoration: none;
+    border: none;
+    padding: 1.5vw 3vw; /* Better padding for clickability */
+    background-color: #868484;
+    color: white;
+    font-size: 2vh;
+    transition: all 0.3s ease; /* Smooth transitions */
+    cursor: pointer; /* Indicate clickable elements */
+}
+
+/* Hover effect for VIT link buttons */
+.vitlinkbuttons:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+    background-color: #6e6c6c; /* Darker background on hover */
+}
+
+/* Style for VIT link text */
+.vitlink {
+    padding: 1vw;
+    font-size: 2vh;
+    color: white;
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for VIT link text */
+.vitlinkbuttons:hover .vitlink {
+    color: #ffffff;
+    filter: brightness(150%);
+    font-weight: 500;
+}
+
+/* Container for link buttons */
+.linkbuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw; /* Slightly larger gap */
+    padding: 2vw;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+.vitportals {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3.4vh;
+    padding-top: 2vw;
+    margin-bottom: 2vh; 
+    font-weight: 700;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .commonbuttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        gap: 2vh;
+    }
+
+    .vitlinkbuttons {
+        padding: 2vw 4vw; /* Larger padding for mobile */
+        font-size: 1.8vh; /* Slightly smaller font size */
+    }
+
+    .vitportals {
+        font-size: 2.8vh; /* Smaller font size for mobile */
+    }
+
+    .linkbuttons {
+        gap: 1.5vw; /* Smaller gap for mobile */
+        padding: 1.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .vitlinkbuttons {
+        border-radius: 2.5vw; /* More rounded corners for mobile */
+        padding: 3vw 6vw; /* Even larger padding for better touch targets */
+    }
+
+    .vitportals {
+        font-size: 2.5vh; /* Smaller font size for very small screens */
+    }
 }
 .commonsubjecthd{
     text-align: center;
-    color:white;
+    color:black;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight:900;
     font-size:4vh;
     padding:1vw;
     padding-top:2vw;
 }
-.commonsub{
-    overflow:hidden;
+.commonsubject{
+    background-color: #cfcece;
 }
-.commonbuttons{
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    gap:3vw;
-    color:white;
-
-}
-.vitlinks{
-    background-color:black;
-    color:#ffffff;
-    width:100vw;
-    height:17vh;
-}
-.vitlinkbuttons{
-    border-radius:3vw;
-    text-decoration: none;
-    border:none;
-    padding:1vw;
-    background-color: rgb(5, 88, 130);
-}
-.vitlinkbuttons:hover{
-    transform:scale(1.07);
-    box-shadow:0 6px 12px rgba(0, 0, 0, 0.3);
-    opacity:0.8;
-}
-.vitlink{
-    padding:5vw;
-    font-size:2vh;
-    color:#f8f8f895;
-}
-.vitlinkbuttons:hover .vitlink{
-    color:#ffffff;
-    filter: brightness(200%);
-    font-weight: 500;
-}
-.linkbuttons{
-    display: flex;
-    justify-content: center;
-    gap:1vw;
-    padding:1vw;
-}
-.vitportals{
-    text-align:center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 3.4vh;
-    padding-top:1vw;
-}
+/* General Styles for Better UI/UX */
 .commonimg {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    gap: 24px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .commonsub {
-    display:inline-block;
+    display: inline-block;
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    padding: 16px;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 380px; /* Limit width on larger screens */
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .commonsub:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
 }
+
 .commonsubimg {
-    width: 310px;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Ensure image doesn't overflow */
+    max-height: 240px;
     object-fit: cover;
-    border-radius: 10px;
-    transition: opacity 0.3s ease;
-    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
 .commonsub:hover .commonsubimg {
-    opacity: 0.8;
-    filter: brightness(90%);
-}    
+    opacity: 0.9;
+    filter: brightness(95%) contrast(110%);
+    transform: scale(1.02);
+}
+
+/* Add a subtle overlay on hover */
+.commonsub::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 14px;
+}
+
+.commonsub:hover::after {
+    opacity: 1;
+}
+
+/* Add a smooth fade-in effect for text or other content inside .commonsub */
+.commonsub-content {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.commonsub:hover .commonsub-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add a subtle border animation on hover */
+.commonsub::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.commonsub:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .commonimg {
+        gap: 16px; /* Reduce gap for smaller screens */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .commonsub {
+        max-width: 100%; /* Full width on smaller screens */
+        padding: 12px; /* Reduce padding for smaller screens */
+    }
+
+    .commonsubimg {
+        max-height: 200px; /* Adjust image height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .commonimg {
+        gap: 12px; /* Further reduce gap for mobile screens */
+        padding: 10px; /* Further reduce padding for mobile screens */
+    }
+
+    .commonsub {
+        padding: 10px; /* Further reduce padding for mobile screens */
+    }
+
+    .commonsubimg {
+        max-height: 180px; /* Adjust image height for mobile screens */
+    }
+}
 footer {
-    background-color: #1a202c;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    background: #1c1c1e;
+    color: #f5f5f7;
+    padding: 40px 10%;
+    font-family: Arial, sans-serif;
 }
 .footer-container {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 .footer-section {
     flex: 1;
     min-width: 250px;
-    margin: 10px;
+    margin: 20px 0;
 }
 .footer-section h2 {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #ffffff;
 }
 .footer-section p, .footer-section ul {
     font-size: 14px;
-    margin: 0;
-    padding: 0;
+    color: #d1d1d6;
 }
 .footer-section ul {
     list-style: none;
+    padding: 0;
 }
 .footer-section ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 .footer-section ul li a {
-    color: white;
+    color: #f5f5f7;
     text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+    color: #0071e3;
 }
 .footer-bottom {
-    margin-top: 20px;
-    border-top: 1px solid #444;
-    padding-top: 10px;
+    text-align: center;
+    padding-top: 20px;
     font-size: 14px;
+    border-top: 1px solid #2c2c2e;
+}
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 20px;
+    }
 }
