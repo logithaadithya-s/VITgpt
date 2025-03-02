@@ -309,7 +309,7 @@ a{
     background-color: #cfcece;
 }
 /* General Styles for Better UI/UX */
-.commonimg {
+/*.commonimg {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -319,7 +319,7 @@ a{
     max-width: 1200px;
     margin: 0 auto;
 }
-
+*/
 .commonsub {
     display: inline-block;
     position: relative;
@@ -329,8 +329,8 @@ a{
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
     background: linear-gradient(135deg, #ffffff, #f7f7f7);
     padding: 16px;
-    width: 100%; /* Full width on smaller screens */
-    max-width: 380px; /* Limit width on larger screens */
+    width: 100%;
+    max-width: 380px;
     text-align: center;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -493,4 +493,20 @@ footer {
     .footer-section {
         margin-bottom: 20px;
     }
+}
+.commonimg{
+    display: grid; 
+    grid-auto-flow:column;
+    scroll-behavior: auto;
+    gap: 1.2rem; 
+    overflow-y:auto;
+    overscroll-behavior-x: contain; scroll-snap-type: x mandatory; 
+    scrollbar-width: none;
+    gap: 24px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.blackprofile{
+    display:none;
 }
