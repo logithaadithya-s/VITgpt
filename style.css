@@ -242,7 +242,15 @@ body {
 }
 
 .maininnerimg {
-    padding: 10vh 10vw;
+    padding: 22vh 10vw;
+    position: relative;
+    animation: texts 3s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+}
+@keyframes texts {
+    0%{left:-600px;}
+    100%{left:0px;}
 }
 
 /* Heading */
@@ -282,11 +290,19 @@ h1.maintext {
 
 /* Image */
 .quotesimg {
-    width: 22vw;
-    height: 56vh;
+    width: 357.14px;
+    height: 571.42px;
     padding-left:4vw;
-    border-radius: 10%;
     margin-top: 30px;
+    position: relative;
+    animation: mobile 3s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    z-index:-100;
+}
+@keyframes mobile{
+    0%{top:600px;}
+    100%{top:0px}
 }
 
 a{
