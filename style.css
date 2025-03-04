@@ -403,7 +403,11 @@ a{
         gap: 1.5vw; /* Smaller gap for mobile */
         padding: 1.5vw;
     }
-    .quotesimg{
+    .mainimg{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .mobile_img{
         display: none;
     }
 }
