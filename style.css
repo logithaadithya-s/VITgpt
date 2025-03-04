@@ -231,6 +231,9 @@ body {
 /* Main Section */
 .mainimg {
     width: 90%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
     max-width: 1100px;
     text-align: left;
     color: white;
@@ -279,8 +282,9 @@ h1.maintext {
 
 /* Image */
 .quotesimg {
-    width: 80vw;
-    height: 70vh;
+    width: 22vw;
+    height: 56vh;
+    padding-left:4vw;
     border-radius: 10%;
     margin-top: 30px;
 }
@@ -301,7 +305,7 @@ a{
 
 /* Container for VIT links */
 .vitlinks {
-    background-color:#2e2f32;
+    background-color:#000000;
     color: black;
     width: 100%;
     height: auto; /* Make height flexible */
@@ -383,6 +387,9 @@ a{
         gap: 1.5vw; /* Smaller gap for mobile */
         padding: 1.5vw;
     }
+    .quotesimg{
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -426,8 +433,7 @@ a{
     border-radius: 14px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
-    background-color:rgb(99, 102, 102);
-    padding: 16px;
+    padding: 9px;
     width: 100%;
     max-width: 380px;
     text-align: center;
@@ -438,7 +444,7 @@ a{
 .commonsub:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(135deg, #f7f7f7, #e0e0e0);
+    background-color: #b3b3b3;
 }
 
 .commonsubimg {
@@ -545,7 +551,7 @@ body {
 }
 
 .vitgpt-footer {
-    background-color: #111;
+    background-color: #2d2d2d;
     color: white;
     text-align: center;
     padding: 40px 20px;

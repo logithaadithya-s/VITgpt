@@ -6,23 +6,37 @@
     <title>SCOPE</title>
     <link rel="stylesheet" href="stylescope.css"/>
     <script src="../../script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1 class="mainheading"><!--Main heading in the top-->
-        <a><img src="../images/vitgptlog03.png" class="vitgptlogo"></a>
-        <nav class="mainnavbar"><!--NAV BAR AT TOP-->
-            <p class="sandwech" onclick="toggleMenu()">☰</p>
-            <ul class="mainnavcontent"><!--Navbar content-->
-                <li class="navinner"><a href="../../index.html">HOME</a></li>
-                <li class="navinner"><a href="./scope.html">SCOPE</a></li>
-                <li class="navinner"><a href="./score.html">SCORE</a></li>
-                <li class="navinner"><a href="./select.html">SELECT</a></li>
-                <li class="navinner"><a href="./sense.html">SENSE</a></li>
-                <li class="navinner"><a href="./other.html">OTHER</a></li>
+    <header class="vitgpt-header">
+        <nav class="vitgpt-navbar">
+            <a href="../../index.html" class="logo">
+                <img src="../images/vitgptlog03.png" alt="VITGPT Logo">
+            </a>
+            <div class="menu-toggle1" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">HOME</a></li>
+                <li><a href="./scope.html">SCOPE</a></li>
+                <li><a href="./score.html">SCORE</a></li>
+                <li><a href="./select.html">SELECT</a></li>
+                <li><a href="./sense.html">SENSE</a></li>
+                <li><a href="./other.html">OTHER</a></li>
             </ul>
+    
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <a href="./upload.html" class="contact-button">UPLOAD</a>
         </nav>
-    </h1>
-    <div class="navback"></div>
+    </header>
     <div class="scope-container">
         <p class="scopename">SCOPE</p>
         <div class="year-container">
