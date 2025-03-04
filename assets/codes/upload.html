@@ -3,9 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Upload Papers</title>
+    <style>
+        body {
+            background-color: black;
+            color: #EAEAEA;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #1E1E1E;
+            padding: 25px;
+            border-radius: 12px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 24px;
+
+        }
+        select, input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: none;
+            background: #292929;
+            color: #EAEAEA;
+            font-size: 14px;
+        }
+        input[type=text]{
+            width:93%;
+        }
+        .upload-box {
+            border: 2px dashed #999998;
+            padding: 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            background: #292929;
+            color: #EAEAEA;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        .upload-box:hover {
+            background: #333333;
+        }
+        button {
+            background: linear-gradient(45deg,white, grey);
+            color: #121212;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>UPLOAD PAPERS</h1>
+        <label>Slot:</label>
+        <select>
+            <option>Select slot</option>
+            <option>Slot 1</option>
+            <option>Slot 2</option>
+        </select>
+        
+        <label>Exam:</label>
+        <select>
+            <option>Select exam</option>
+            <option>Midterm</option>
+            <option>Final</option>
+        </select>
+        
+        <label>Subject:</label>
+        <input type="text" placeholder="Search for subject...">
+        
+        <label>Year:</label>
+        <select>
+            <option>Select year</option>
+            <option>2024</option>
+            <option>2023</option>
+        </select>
+        
+        <label>Semester Selection:</label>
+        <select>
+            <option>Select semester</option>
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+        </select>
+        
+        <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+            Drag 'n' drop some files here, or <span style="color:rgb(136, 129, 129); text-decoration: underline;">click</span> to select files
+        </div>
+        <input type="file" id="fileInput" multiple style="display: none;">
+        
+        <button>Upload</button>
+    </div>
 </body>
 </html>

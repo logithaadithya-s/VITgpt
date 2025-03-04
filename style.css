@@ -12,24 +12,20 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* .vitgpt-header {
+.vitgpt-header {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background: white;
-    backdrop-filter: blur(90px);
-    padding: 12px 20px;
+    background-color: transparent;
+    padding-top:3vh ;
     display: flex;
     justify-content: center;
     z-index: 1000;
-} */
+}
 
 .vitgpt-navbar {
     display: flex;
-    position: fixed;
-    top: 1vh;
-    left:3.5vw;
     align-items: center;
     justify-content: space-between;
     width: 90%;
@@ -84,7 +80,7 @@ body {
     color: white;
     padding: 5px 10px;
     font-size: 14px;
-    width: 140px;
+    width:15vw;
 }
 
 .search-btn {
