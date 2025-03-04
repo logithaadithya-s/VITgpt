@@ -2,158 +2,209 @@
     margin:0;
     padding:0;
 }
-.mainnavcontent{
-    display:flex;
-    flex-direction:row;
-    list-style:none;
-    gap:4vw;
-    font-size:2vh;
-    justify-content:flex-end;
-    padding-right:0vw;
-    padding:1.2vw;
-    padding-left: 39vw;
-    color: rgba(255, 255, 255, 0.8);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.mainheading{
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    display: flex;
-    opacity:0.7;
-    width:100vw;
-    height:9vh;
-    color:white;
-    z-index:1000;
-}
-.vitgptlogo{
-    width:10vw;
-    height:6vh;
-    padding:1vw;
-    padding-top:0.5vw;
-}
-.mainnavbar{
-    flex-basis:auto;
-}
-.sandwech{
-    display:none;
-}
-@media (max-width:1025px){
-    .vitgptlogo{
-        width:18vw;
-        height:6vh;
-        padding:1vw;
-        padding-top:0.5vw;
-    }
-    .mainnavcontent {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: white;
-        width: 50%;
-        padding: 10px;
-        color:black;
-        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-        opacity:1;
-    }
-    .navinner>a{
-        color:black;
-    }
-    .mainnavcontent li {
-        padding: 10px;
-        text-align: center;
-    }
-    .sandwech{
-        display:block;
-        padding-top:1.2vh;
-        padding-left: 72vw;
-    }
-    .mainnavcontent li:hover {
-        color:black; 
-    }
-}
-@media (max-width:1150px){
-    .vitgptlogo{
-        width:16vw;
-        height:6vh;
-        padding:1vw;
-        padding-top:0.5vw;
-    }
-}
-.navback{
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+body {
+    margin: 0;
+    padding: 0;
     background-color: black;
-    height:9vh;
-    width:100vw;
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
-.downcontent {
+
+/* .vitgpt-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    backdrop-filter: blur(90px);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+} */
+
+.vitgpt-navbar {
+    display: flex;
+    position: fixed;
+    top: 1vh;
+    left:3.5vw;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    background: #161616;
+    padding: 10px 20px;
+    z-index:1000;
+    border-radius: 50px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* Default Navbar */
+.nav-links {
     display: flex;
     list-style: none;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center; /* Center items vertically */
-    gap: 10vw;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    font-size: 15px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #222;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+.search-box {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 140px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    color: #888;
+}
+
+/* Contact  */
+.contact-button {
+    background: transparent;
+    border: 1.5px solid white;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+    background: white;
     color: black;
-    background-color: #D3D3D3;
-    padding-right: 10vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh; /* Add padding at the bottom for better spacing */
-    height: auto; /* Make height flexible */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.downcontent li a {
-    color: #1a202c;
-    font-weight: 600;
-    text-decoration: none; /* Remove underline from links */
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth hover effects */
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.menu-toggle1 {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
 
-.downcontent li a:hover {
-    color: #4a5568; /* Change color on hover */
-    transform: translateY(-2px); /* Add a slight lift effect on hover */
-}
-
-/* Add a subtle underline effect on hover */
-.downcontent li a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background-color: #4a5568;
-    transition: width 0.3s ease-in-out;
-}
-
-.downcontent li a:hover::after {
-    width: 100%; /* Expand underline on hover */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .downcontent {
-        justify-content: center; /* Center items on smaller screens */
-        gap: 5vw; /* Reduce gap for smaller screens */
-        padding-right: 5vw; /* Reduce padding for smaller screens */
-        padding-left: 5vw; /* Add left padding for balance */
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .vitgpt-navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    .downcontent li a {
-        font-size: 14px; /* Slightly reduce font size for smaller screens */
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #161616;
+        width: 90%;
+        border-radius: 20px;
+        text-align: center;
+        padding: 15px 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .contact-button {
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
-    .downcontent {
-        flex-direction: column; /* Stack items vertically on mobile */
-        gap: 2vh; /* Reduce gap for vertical layout */
-        padding-top: 2vh; /* Adjust padding for vertical layout */
-        padding-bottom: 2vh;
+/* Mobile View */
+/* @media screen and (max-width: 600px) {
+    .vitgpt-navbar {
+        flex-direction: column;
+        padding: 10px;
     }
 
-    .downcontent li a {
-        font-size: 16px; /* Slightly increase font size for better readability */
+    .menu-toggle1 {
+        align-self: flex-end;
+    }
+
+    .search-container {
+        width: 90%;
+        display: flex;
+        margin-top: 10px;
+        
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+} */
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 .bot{
@@ -161,6 +212,12 @@
     z-index:100;
     top:90vh;
     left:92vw;
+    background-color: white;
+    border: 9px solid cyon;
+    border-radius:50%;
+}
+.innerbot{
+    padding-top:2vh;
 }
 .profile{
     padding-bottom:2vh;
@@ -171,21 +228,66 @@
 .navinner{
     padding-top:1vh;
 }
-.quotesimg{
-    width:80vw;
-    height:70vh;
-    border-radius:1px solid white;
-    border-radius:10%;
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Main Section */
+.mainimg {
+    width: 90%;
+    max-width: 1100px;
+    text-align: left;
+    color: white;
+    padding-top:17vh;
+    padding-bottom:7vh;
 }
-.maininnerimg{
-    padding-left:10vw;
-    padding-right:10vw;
-    padding-top:10vh;
-    padding-bottom:10vh;
+
+.maininnerimg {
+    padding: 10vh 10vw;
 }
-.mainimg{
-    background-image:url(https://img.freepik.com/premium-vector/education-pattern-background-doodle-style_660381-2541.jpg) ;
+
+/* Heading */
+h1.maintext {
+    font-size: 2.5rem;
+    font-weight: bold;
+    max-width: 600px;
 }
+
+.subtext {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #b3b3b3;
+}
+
+/* Button */
+.mainnavbutton {
+    margin-top: 20px;
+}
+
+.quote-btn {
+    background: #fff;
+    color: #000;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.quote-btn:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Image */
+.quotesimg {
+    width: 80vw;
+    height: 70vh;
+    border-radius: 10%;
+    margin-top: 30px;
+}
+
 a{
     text-decoration: none;
     color:white;
@@ -202,7 +304,7 @@ a{
 
 /* Container for VIT links */
 .vitlinks {
-    background-color: #9d9d9d;
+    background-color:#2e2f32;
     color: black;
     width: 100%;
     height: auto; /* Make height flexible */
@@ -298,15 +400,15 @@ a{
 }
 .commonsubjecthd{
     text-align: center;
-    color:black;
+    color:white;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight:900;
+    font-weight:600;
     font-size:4vh;
     padding:1vw;
     padding-top:2vw;
 }
 .commonsubject{
-    background-color: #cfcece;
+    background-color: black;
 }
 /* General Styles for Better UI/UX */
 /*.commonimg {
@@ -327,7 +429,7 @@ a{
     border-radius: 14px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
-    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    background-color:rgb(99, 102, 102);
     padding: 16px;
     width: 100%;
     max-width: 380px;
@@ -344,7 +446,7 @@ a{
 
 .commonsubimg {
     width: 100%;
-    height: auto;
+    height: 100%;
     max-width: 100%; /* Ensure image doesn't overflow */
     max-height: 240px;
     object-fit: cover;
@@ -437,63 +539,108 @@ a{
         max-height: 180px; /* Adjust image height for mobile screens */
     }
 }
-footer {
-    background: #1c1c1e;
-    color: #f5f5f7;
-    padding: 40px 10%;
-    font-family: Arial, sans-serif;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
 }
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-    margin: 20px 0;
-}
-.footer-section h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-.footer-section p, .footer-section ul {
-    font-size: 14px;
-    color: #d1d1d6;
-}
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-.footer-section ul li {
-    margin-bottom: 8px;
-}
-.footer-section ul li a {
-    color: #f5f5f7;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.footer-section ul li a:hover {
-    color: #0071e3;
-}
-.footer-bottom {
+
+.vitgpt-footer {
+    background-color: #111;
+    color: white;
     text-align: center;
-    padding-top: 20px;
+    padding: 40px 20px;
+}
+
+.footer-top p {
+    opacity: 0.7;
     font-size: 14px;
-    border-top: 1px solid #2c2c2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .footer-section {
-        margin-bottom: 20px;
-    }
+
+.footer-top h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 10px;
 }
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.footer-column p, .footer-column a {
+    font-size: 14px;
+    opacity: 0.7;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-column a:hover {
+    opacity: 1;
+}
+
+.quote-btn {
+    padding: 12px 24px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 25px;
+}
+
+.quote-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.social-icons {
+    margin-top: 40px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+}
+
 .commonimg{
     display: grid; 
     grid-auto-flow:column;

@@ -8,22 +8,91 @@
     <script src="../../script.js"></script>
 </head>
 <body>
-    <h1 class="mainheading"><!--Main heading in the top-->
-        <a><img src="../images/vitgptlog03.png" class="vitgptlogo"></a>
-        <nav class="mainnavbar"><!--NAV BAR AT TOP-->
-            <p class="sandwech" onclick="toggleMenu()">☰</p>
-            <ul class="mainnavcontent"><!--Navbar content-->
-                <li class="navinner"><a href="../../index.html">HOME</a></li>
-                <li class="navinner"><a href="./scope.html">SCOPE</a></li>
-                <li class="navinner"><a href="./score.html">SCORE</a></li>
-                <li class="navinner"><a href="./select.html">SELECT</a></li>
-                <li class="navinner"><a href="./sense.html">SENSE</a></li>
-                <li class="navinner"><a href="./other.html">OTHER</a></li>
+    <header class="vitgpt-header">
+        <nav class="vitgpt-navbar">
+            <a href="index.html" class="logo">
+                <img src="../images/vitgptlog03.png" alt="VITGPT Logo">
+            </a>
+            <div class="menu-toggle1" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">HOME</a></li>
+                <li><a href="./assets/codes/scope.html">SCOPE</a></li>
+                <li><a href="./assets/codes/score.html">SCORE</a></li>
+                <li><a href="./assets/codes/select.html">SELECT</a></li>
+                <li><a href="./assets/codes/sense.html">SENSE</a></li>
+                <li><a href="./assets/codes/other.html">OTHER</a></li>
             </ul>
+    
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <a href="#" class="contact-button">UPLOAD</a>
         </nav>
-    </h1>
-    <div class="navback"></div>
-    <div class="userdetails"></div>
-    <div class="userinput"></div>
+    </header>    
+    <div class="container">
+        <!-- Logo & Name -->
+        <h1 class="vitgptlog">
+            <div class="logo">
+                <!-- <img src="../images/vitgptlog03.png" alt="AI Logo">  -->
+                <span>VITGPT</span>
+            </div>
+            <div class="menu-icon"><i class="fas fa-th"></i></div>
+        </h1>
+
+        <!-- Greeting -->
+        <main>
+            <h2>Hi, <span class="username">VITian</span></h2>
+            <h1>Can I help you with anything?</h1><br>
+            <p class="subtext">Ready to assist you with anything you need. <br> From answering questions to providing recommendations.</p>
+        </main>
+
+        <!-- Chat Input -->
+        <div class="chat-box">
+            <input type="text" id="chat-input" placeholder="Ask me anything...">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <!-- <footer class="vitgpt-footer">
+        <div class="footer-top">
+            <p>Your academic companion!</p>
+            <h1>Let's Elevate Learning</h1>
+        </div>
+    
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><a href="mailto:support@vitgpt.com">support@vitgpt.com</a></p>
+            </div>
+    
+            <div class="footer-column">
+                <button class="quote-btn">Get Started</button>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Support</h3>
+                <p>Available 24/7 for student queries</p>
+            </div>
+        </div>
+    
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 VITGPT. All Rights Reserved.</p>
+            <a href="#">Back to Top ↑</a>
+        </div>
+    </footer> -->
 </body>
 </html>

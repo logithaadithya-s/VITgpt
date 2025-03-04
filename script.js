@@ -1,4 +1,4 @@
 function toggleMenu() {
-    let nav = document.querySelector(".mainnavcontent");
-    nav.style.display = (nav.style.display === "flex") ? "none" : "flex";
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
 }
