@@ -37,6 +37,51 @@
             <a href="./upload.html" class="contact-button">UPLOAD</a>
         </nav>
     </header>
+    <div class="container">
+        <h1 class="subjecthead">Example subject Papers</h1>
+        <div class="filters">
+            <button class="filter-btn" onclick="filterPapers('CAT-1')">CAT-1</button>
+            <button class="filter-btn active" onclick="filterPapers('CAT-2')">CAT-2</button>
+            <button class="filter-btn" onclick="filterPapers('FATS')">FATS</button>
+            <button class="filter-btn" onclick="filterPapers('Ongoing Exams')">Ongoing Exams</button>
+        </div>
+        
+        <div class="year-section">
+            <h2>2023-2024</h2>
+            <div class="paper-container" id="year-2024">
+                <div class="paper-card" data-category="CAT-2">
+                    <h3>Example subject</h3>
+                    <p class="category">CAT-2</p>
+                    <p class="date">10/8/2023 - A1+TA1</p>
+                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                </div>
+                <div class="paper-card" data-category="CAT-2">
+                    <h3>Example subject</h3>
+                    <p class="category">CAT-2</p>
+                    <p class="date">10/8/2023 - A2+TA2</p>
+                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="year-section">
+            <h2>2022-2023</h2>
+            <div class="paper-container" id="year-2023">
+                <div class="paper-card" data-category="CAT-2">
+                    <h3>Example subject</h3>
+                    <p class="category">CAT-2</p>
+                    <p class="date">10/8/2022 - A1+TA1</p>
+                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                </div>
+                <div class="paper-card" data-category="CAT-2">
+                    <h3>Example subject</h3>
+                    <p class="category">CAT-2</p>
+                    <p class="date">10/8/2022 - A2+TA2</p>
+                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="vitgpt-footer">
         <div class="footer-top">
             <p>Your academic companion!</p>

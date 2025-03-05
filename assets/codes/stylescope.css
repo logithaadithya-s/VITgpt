@@ -94,8 +94,6 @@ body {
 .search-btn:hover {
     color: #888;
 }
-
-/* Contact  */
 .contact-button {
     background: transparent;
     border: 1.5px solid white;
@@ -111,8 +109,6 @@ body {
     background: white;
     color: black;
 }
-
-/* Hamburger Menu */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -125,8 +121,6 @@ body {
     color: white;
     cursor: pointer;
 }
-
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
     .vitgpt-navbar {
         flex-wrap: wrap;
@@ -165,34 +159,6 @@ body {
     }
 }
 
-/* Mobile View */
-/* @media screen and (max-width: 600px) {
-    .vitgpt-navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .menu-toggle1 {
-        align-self: flex-end;
-    }
-
-    .search-container {
-        width: 90%;
-        display: flex;
-        margin-top: 10px;
-        
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    .nav-links {
-        width: 100%;
-    }
-} */
-
-/* Fade-In Animation */
 @keyframes fadeSlideIn {
     from {
         opacity: 0;
@@ -241,8 +207,6 @@ a{
     align-items: center;
     flex-direction: column;
 }
-
-/* Ensuring the main container scales well */
 .maincontainer {
     margin-top:3vh;
     display: flex;
@@ -270,7 +234,6 @@ a{
     margin-bottom: 10px;
 }
 
-/* Responsive Grid Layout */
 .carousel {
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
@@ -280,8 +243,6 @@ a{
     border-radius: 12px;
     width: 100%;
 }
-
-/* Responsive Subject Box */
 .subject-box {
     display: flex;
     align-items: center;
@@ -305,7 +266,6 @@ a{
     font-size: 1rem;
 }
 
-/* Custom Icons */
 .icon {
     width: 20px;
     height: 20px;
@@ -313,8 +273,6 @@ a{
     display: inline-block;
     border-radius: 4px;
 }
-
-/* Responsive Design Adjustments */
 @media (max-width: 1024px) {
     .scope-container {
         width: 95%;

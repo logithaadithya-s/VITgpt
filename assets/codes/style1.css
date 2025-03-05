@@ -451,3 +451,64 @@ body {
     position: absolute;
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%);
 }
+.container {
+    width: 80%;
+    margin: auto;
+    margin-top:12vh;
+    padding: 20px;
+}
+.subjecthead{
+    text-align: center;
+    padding:30px;
+}
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.filter-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.filter-btn.active, .filter-btn:hover {
+    background: #555;
+    color: #fff;
+}
+.year-section {
+    text-align: left;
+    margin-bottom: 30px;
+}
+.paper-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.paper-card {
+    background: #222;
+    padding: 25px;
+    border-radius: 10px;
+    width: 280px;
+    height: 200px;
+    text-align: center;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.view-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.view-btn:hover {
+    background: #777;
+}
