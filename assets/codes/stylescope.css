@@ -229,101 +229,136 @@ a{
     color:white;
 }
 .scope-container {
+    margin-top: 10vh;
+    padding-top: 20px;
+    width: 90%;
+    max-width: 1200px;
+    background-color: black;
     padding: 20px;
-    text-align: center;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Ensuring the main container scales well */
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .scopename {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .year-container {
-    margin: 20px auto;
-    max-width: 90%;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .year {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.carousel {
-    display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 15px; /* Space between boxes */
-    padding-bottom: 10px; /* Space for scrollbar */
-}
-
-.subject-box {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    min-width: 200px; /* Minimum width for each box */
-    text-align: center;
     font-size: 1.2rem;
-    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Responsive Grid Layout */
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 15px;
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+/* Responsive Subject Box */
+.subject-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8645c;
+    padding: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    justify-content: center;
+    text-align: center;
 }
 
 .subject-box:hover {
-    background-color: #e0e0e0;
-    cursor: pointer;
-    transform: scale(1.05); /* Slight zoom effect on hover */
-    transition: transform 0.3s ease;
+    background: linear-gradient(#f8645c, #e91a1a);
 }
 
-.carousel::-webkit-scrollbar {
-    display: none;
+.subjectanchor {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Custom Icons */
+.icon {
+    width: 20px;
+    height: 20px;
+    background-color: #B0BEC5;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+    .scope-container {
+        width: 95%;
+    }
+    .carousel {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 15px;
+    }
 }
 
 @media (max-width: 768px) {
-    .scope-container {
-        padding: 10px;
-    }
-
     .scopename {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
-
     .year {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
-
+    .carousel {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
     .subject-box {
-        min-width: 150px; /* Smaller boxes for smaller screens */
-        font-size: 1rem;
+        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
-    .scopename {
-        font-size: 1.8rem;
+    .scope-container {
+        width: 100%;
+        margin-top: 5vh;
+        padding: 10px;
     }
-
-    .year {
-        font-size: 1.3rem;
+    .carousel {
+        grid-template-columns: repeat(1, minmax(120px, 1fr));
+        gap: 10px;
+        padding: 10px;
     }
-
     .subject-box {
-        min-width: 120px; /* Even smaller boxes for mobile */
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    .subjectanchor {
         font-size: 0.9rem;
     }
 }
-.scopename{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:2.5em;
-    font-weight:900;
-}
-.scope-container{
-    background-color: #e0e0e0;
-}
-.year{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight:500;
-}
+
 footer {
     background: #1c1c1e;
     color: #f5f5f7;
@@ -437,4 +472,29 @@ body {
 }
 .subject-box>a{
     color:black;
+}
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: white; /* Dark blue background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index:1000;
+}
+
+/* Chat bubble shape */
+.chatbot-icon::before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%);
 }

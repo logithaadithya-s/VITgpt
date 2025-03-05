@@ -426,3 +426,28 @@ body {
 .subject-box>a{
     color:black;
 }
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: white; /* Dark blue background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index:1000;
+}
+
+/* Chat bubble shape */
+.chatbot-icon::before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%);
+}
