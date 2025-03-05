@@ -1,10 +1,11 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -103,16 +104,6 @@ body {
     color: white;
     text-decoration: none;
 }
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
 body {
     background: #0e0f12;
     color: #ddd;
@@ -122,14 +113,10 @@ body {
     height: 100vh;
     text-align: center;
 }
-
-/* Main Container */
 .container {
     width: 90%;
     max-width: 600px;
 }
-
-/* Header */
 .vitgptlog{
     display: flex;
     justify-content: space-between;
@@ -153,8 +140,6 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
-
-/* Main Text */
 h1 {
     font-size: 1.8rem;
     font-weight: bold;
@@ -167,10 +152,8 @@ h2 {
 }
 
 .username {
-    color: #8aa4ff;
+    color: #f8645c;
 }
-
-/* Chat Box */
 .chat-box {
     display: flex;
     align-items: center;
@@ -203,16 +186,6 @@ h2 {
 .chat-box button:hover {
     color: #8aa4ff;
 }
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #111;
-    color: white;
-    font-family: 'Arial', sans-serif;
-}@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
 body {
     margin: 0;
     padding: 0;
@@ -248,8 +221,6 @@ body {
 .logo img {
     height: 40px;
 }
-
-/* Default Navbar */
 .nav-links {
     display: flex;
     list-style: none;
@@ -272,8 +243,6 @@ body {
 .nav-links a:hover {
     opacity: 1;
 }
-
-/* Search Bar */
 .search-container {
     display: flex;
     align-items: center;
@@ -303,8 +272,6 @@ body {
 .search-btn:hover {
     color: #888;
 }
-
-/* Contact  */
 .contact-button {
     background: transparent;
     border: 1.5px solid white;
@@ -320,8 +287,6 @@ body {
     background: white;
     color: black;
 }
-
-/* Hamburger Menu */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -334,8 +299,6 @@ body {
     color: white;
     cursor: pointer;
 }
-
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
     .vitgpt-navbar {
         flex-wrap: wrap;
@@ -373,35 +336,6 @@ body {
         display: none;
     }
 }
-
-/* Mobile View */
-/* @media screen and (max-width: 600px) {
-    .vitgpt-navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .menu-toggle1 {
-        align-self: flex-end;
-    }
-
-    .search-container {
-        width: 90%;
-        display: flex;
-        margin-top: 10px;
-        
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    .nav-links {
-        width: 100%;
-    }
-} */
-
-/* Fade-In Animation */
 @keyframes fadeSlideIn {
     from {
         opacity: 0;

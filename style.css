@@ -3,6 +3,7 @@
     padding:0;
 }
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     margin: 0;
@@ -39,8 +40,6 @@ body {
 .logo img {
     height: 40px;
 }
-
-/* Default Navbar */
 .nav-links {
     display: flex;
     list-style: none;
@@ -63,8 +62,6 @@ body {
 .nav-links a:hover {
     opacity: 1;
 }
-
-/* Search Bar */
 .search-container {
     display: flex;
     align-items: center;
@@ -94,8 +91,6 @@ body {
 .search-btn:hover {
     color: #888;
 }
-
-/* Contact  */
 .contact-button {
     background: transparent;
     border: 1.5px solid white;
@@ -111,8 +106,6 @@ body {
     background: white;
     color: black;
 }
-
-/* Hamburger Menu */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -125,8 +118,6 @@ body {
     color: white;
     cursor: pointer;
 }
-
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
     .vitgpt-navbar {
         flex-wrap: wrap;
@@ -164,35 +155,6 @@ body {
         display: none;
     }
 }
-
-/* Mobile View */
-/* @media screen and (max-width: 600px) {
-    .vitgpt-navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .menu-toggle1 {
-        align-self: flex-end;
-    }
-
-    .search-container {
-        width: 90%;
-        display: flex;
-        margin-top: 10px;
-        
-    }
-
-    .search-box {
-        width: 100%;
-    }
-
-    .nav-links {
-        width: 100%;
-    }
-} */
-
-/* Fade-In Animation */
 @keyframes fadeSlideIn {
     from {
         opacity: 0;
@@ -225,10 +187,6 @@ body {
 .navinner{
     padding-top:1vh;
 }
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-/* Main Section */
 .mainimg {
     width: 90%;
     display: grid;
@@ -252,8 +210,6 @@ body {
     0%{left:-600px;}
     100%{left:0px;}
 }
-
-/* Heading */
 h1.maintext {
     font-size: 2.5rem;
     font-weight: bold;
@@ -265,8 +221,6 @@ h1.maintext {
     margin-top: 10px;
     color: #b3b3b3;
 }
-
-/* Button */
 .mainnavbutton {
     margin-top: 20px;
 }
@@ -287,8 +241,6 @@ h1.maintext {
     background: #4CAF50;
     color: white;
 }
-
-/* Image */
 .quotesimg {
     width: 357.14px;
     height: 571.42px;
@@ -309,7 +261,6 @@ a{
     text-decoration: none;
     color:white;
 }
-/* General button container */
 .commonbuttons {
     display: flex;
     flex-direction: row;
@@ -318,60 +269,48 @@ a{
     gap: 3vw;
     color: white;
 }
-
-/* Container for VIT links */
 .vitlinks {
     background-color:#000000;
     color: black;
     width: 100%;
-    height: auto; /* Make height flexible */
-    padding: 2vh 0; /* Add padding for better spacing */
+    height: auto; 
+    padding: 2vh 0;
 }
-
-/* Style for VIT link buttons */
 .vitlinkbuttons {
-    border-radius: 2.5vw; /* Slightly rounded corners */
+    border-radius: 2.5vw; 
     text-decoration: none;
     border: none;
-    padding: 1.5vw 3vw; /* Better padding for clickability */
+    padding: 1.5vw 3vw;
     background-color: #868484;
     color: white;
     font-size: 2vh;
-    transition: all 0.3s ease; /* Smooth transitions */
-    cursor: pointer; /* Indicate clickable elements */
+    transition: all 0.3s ease; 
+    cursor: pointer;
 }
-
-/* Hover effect for VIT link buttons */
 .vitlinkbuttons:hover {
     transform: scale(1.07);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     opacity: 0.9;
-    background-color: #6e6c6c; /* Darker background on hover */
+    background-color: #6e6c6c;
 }
-
-/* Style for VIT link text */
 .vitlink {
     padding: 1vw;
     font-size: 2vh;
     color: white;
-    transition: all 0.3s ease; /* Smooth transitions */
+    transition: all 0.3s ease;
 }
-
-/* Hover effect for VIT link text */
 .vitlinkbuttons:hover .vitlink {
     color: #ffffff;
     filter: brightness(150%);
     font-weight: 500;
 }
-
-/* Container for link buttons */
 .linkbuttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2vw; /* Slightly larger gap */
+    gap: 2vw;
     padding: 2vw;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap;
 }
 .vitportals {
     text-align: center;
@@ -382,25 +321,23 @@ a{
     font-weight: 700;
     color: white;
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .commonbuttons {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        flex-direction: column; 
         gap: 2vh;
     }
 
     .vitlinkbuttons {
-        padding: 2vw 4vw; /* Larger padding for mobile */
-        font-size: 1.8vh; /* Slightly smaller font size */
+        padding: 2vw 4vw;
+        font-size: 1.8vh;
     }
 
     .vitportals {
-        font-size: 2.8vh; /* Smaller font size for mobile */
+        font-size: 2.8vh;
     }
 
     .linkbuttons {
-        gap: 1.5vw; /* Smaller gap for mobile */
+        gap: 1.5vw; 
         padding: 1.5vw;
     }
     .mainimg{
@@ -414,12 +351,12 @@ a{
 
 @media (max-width: 480px) {
     .vitlinkbuttons {
-        border-radius: 2.5vw; /* More rounded corners for mobile */
-        padding: 3vw 6vw; /* Even larger padding for better touch targets */
+        border-radius: 2.5vw;
+        padding: 3vw 6vw; 
     }
 
     .vitportals {
-        font-size: 2.5vh; /* Smaller font size for very small screens */
+        font-size: 2.5vh;
     }
 }
 .commonsubjecthd{
@@ -434,18 +371,6 @@ a{
 .commonsubject{
     background-color: black;
 }
-/* General Styles for Better UI/UX */
-/*.commonimg {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-*/
 .commonsub {
     display: inline-block;
     position: relative;
@@ -470,7 +395,7 @@ a{
 .commonsubimg {
     width: 100%;
     height: 100%;
-    max-width: 100%; /* Ensure image doesn't overflow */
+    max-width: 100%;
     max-height: 240px;
     object-fit: cover;
     border-radius: 12px;
@@ -482,8 +407,6 @@ a{
     filter: brightness(95%) contrast(110%);
     transform: scale(1.02);
 }
-
-/* Add a subtle overlay on hover */
 .commonsub::after {
     content: '';
     position: absolute;
@@ -500,8 +423,6 @@ a{
 .commonsub:hover::after {
     opacity: 1;
 }
-
-/* Add a smooth fade-in effect for text or other content inside .commonsub */
 .commonsub-content {
     opacity: 0;
     transform: translateY(10px);
@@ -512,8 +433,6 @@ a{
     opacity: 1;
     transform: translateY(0);
 }
-
-/* Add a subtle border animation on hover */
 .commonsub::before {
     content: '';
     position: absolute;
@@ -530,46 +449,36 @@ a{
 .commonsub:hover::before {
     opacity: 1;
 }
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .commonimg {
-        gap: 16px; /* Reduce gap for smaller screens */
-        padding: 15px; /* Reduce padding for smaller screens */
+        gap: 16px;
+        padding: 15px;
     }
 
     .commonsub {
-        max-width: 100%; /* Full width on smaller screens */
-        padding: 12px; /* Reduce padding for smaller screens */
+        max-width: 100%; 
+        padding: 12px; 
     }
 
     .commonsubimg {
-        max-height: 200px; /* Adjust image height for smaller screens */
+        max-height: 200px;
     }
 }
 
 @media (max-width: 480px) {
     .commonimg {
-        gap: 12px; /* Further reduce gap for mobile screens */
-        padding: 10px; /* Further reduce padding for mobile screens */
+        gap: 12px; 
+        padding: 10px;
     }
 
     .commonsub {
-        padding: 10px; /* Further reduce padding for mobile screens */
+        padding: 10px;
     }
 
     .commonsubimg {
-        max-height: 180px; /* Adjust image height for mobile screens */
+        max-height: 180px;
     }
 }
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: white;
-}
-
 .vitgpt-footer {
     background-color: #2d2d2d;
     color: white;
@@ -677,16 +586,13 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-.blackprofile{
-    display:none;
-}
 .chatbot-icon {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: white; /* Dark blue background */
+    background-color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -696,7 +602,6 @@ body {
     z-index:1000;
 }
 
-/* Chat bubble shape */
 .chatbot-icon::before {
     content: "";
     width: 30px;
