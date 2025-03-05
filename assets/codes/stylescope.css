@@ -244,6 +244,7 @@ a{
 
 /* Ensuring the main container scales well */
 .maincontainer {
+    margin-top:3vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
