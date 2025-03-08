@@ -167,34 +167,6 @@
                 display: none;
             }
         }
-
-        /* Mobile View */
-        /* @media screen and (max-width: 600px) {
-            .vitgpt-navbar {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            .menu-toggle1 {
-                align-self: flex-end;
-            }
-
-            .search-container {
-                width: 90%;
-                display: flex;
-                margin-top: 10px;
-
-            }
-
-            .search-box {
-                width: 100%;
-            }
-
-            .nav-links {
-                width: 100%;
-            }
-        } */
-
         /* Fade-In Animation */
         @keyframes fadeSlideIn {
             from {
@@ -240,7 +212,7 @@
             color: #EAEAEA;
             font-size: 14px;
         }
-        input[type=text]{
+        .subject123{
             width:93%;
         }
         .upload-box {
@@ -405,32 +377,55 @@
         <label>Slot:</label>
         <select>
             <option>Select slot</option>
-            <option>Slot 1</option>
-            <option>Slot 2</option>
+            <option>Slot A1</option>
+            <option>Slot A2</option>
+            <option>Slot B1</option>
+            <option>Slot B2</option>
+            <option>Slot C1</option>
+            <option>Slot C2</option>
+            <option>Slot D1</option>
+            <option>Slot D2</option>
+            <option>Slot E1</option>
+            <option>Slot E2</option>
+            <option>Slot F1</option>
+            <option>Slot F2</option>
+            <option>Slot G1</option>
+            <option>Slot G2</option>
         </select>
         
         <label>Exam:</label>
         <select>
             <option>Select exam</option>
-            <option>Midterm</option>
-            <option>Final</option>
+            <option value=>CAT1</option>
+            <option>CAT2</option>
+            <option>FAT</option>
         </select>
         
         <label>Subject:</label>
-        <input type="text" class ="subject123"placeholder="Search for subject...">
+        <input list="courses" class ="subject123" name ="subject" placeholder="Search for subject...">
+        <datalist id="courses">
+        <option value="Chemical Engineering Thermodynamics [BCHE202L]">
+        <option value="Mechanical Operations [BCHE301L]">
+        <option value="Basic Electrical and Electronics Engineering [IEEE102L]">
+        <option value="Technical English Communication [BENG101L]">
+        <option value="Principles of Chemical Engineering [BBIT201L]">
+        <option value="Technical English Communication [IENG101L]">
+        <option value="Calculus [IMAT101L]">
+        <option value="Basic Electrical and Electronics Engineering [BEEE102L]">
+    </datalist>
         
         <label>Year:</label>
-        <select>
+        <select id="year">
             <option>Select year</option>
-            <option>2024</option>
-            <option>2023</option>
+            <option value=2024>2024</option>
+            <option value=2023>2023</option>
         </select>
         
         <label>Semester Selection:</label>
         <select>
             <option>Select semester</option>
-            <option>Semester 1</option>
-            <option>Semester 2</option>
+            <option>Fall semester</option>
+            <option>Winter semester</option>
         </select>
         
         <div class="upload-box" onclick="document.getElementById('fileInput').click()">
@@ -438,7 +433,8 @@
         </div>
         <input type="file" id="fileInput" multiple style="display: none;">
         
-        <button>Upload</button>
+        <button onclick="validateForm()">Upload</button>
+        <input type="reset" id="reset" style="display: ;">
     </div>
     </div>
     <footer class="vitgpt-footer">
@@ -478,6 +474,6 @@
             <a href="#">Back to Top ↑</a>
         </div>
     </footer>
-
+    <script src="./uploads.js"></script>
 </body>
 </html>

@@ -38,7 +38,7 @@
         </nav>
     </header>
     <div class="container">
-        <h1 class="subjecthead">Example subject Papers</h1>
+        <h1 id="subjecthead">Example subject Papers</h1>
         <div class="filters">
             <button class="filter-btn" onclick="filterPapers('CAT-1')">CAT-1</button>
             <button class="filter-btn active" onclick="filterPapers('CAT-2')">CAT-2</button>
@@ -50,16 +50,16 @@
             <h2>2023-2024</h2>
             <div class="paper-container" id="year-2024">
                 <div class="paper-card" data-category="CAT-2">
-                    <h3>Example subject</h3>
+                    <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2023 - A1+TA1</p>
-                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                    <a href="./paperview.html" class="view-btn">View Paper</a>
                 </div>
                 <div class="paper-card" data-category="CAT-2">
-                    <h3>Example subject</h3>
+                    <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2023 - A2+TA2</p>
-                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                    <a href="./paperview.html" class="view-btn">View Paper</a>
                 </div>
             </div>
         </div>
@@ -68,16 +68,16 @@
             <h2>2022-2023</h2>
             <div class="paper-container" id="year-2023">
                 <div class="paper-card" data-category="CAT-2">
-                    <h3>Example subject</h3>
+                    <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2022 - A1+TA1</p>
-                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                    <a href="./paperview.html" class="view-btn">View Paper</a>
                 </div>
                 <div class="paper-card" data-category="CAT-2">
-                    <h3>Example subject</h3>
+                    <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2022 - A2+TA2</p>
-                    <a href="https://vitgpt.com" class="view-btn">View Paper</a>
+                    <a href="./paperview.html" class="view-btn">View Paper</a>
                 </div>
             </div>
         </div>
@@ -117,5 +117,6 @@
             <a href="#">Back to Top ↑</a>
         </div>
     </footer>
+    <script src="./paper.js"></script>
 </body>
 </html>

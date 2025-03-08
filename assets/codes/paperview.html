@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers | VITGPT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #121212; color: white; }
+        .header { padding: 20px; background-color:transparent; font-size: 24px;margin-top: 13vh; }
+        .upload-btn { background: #6a0dad; padding: 10px 20px; color: white; border: none; cursor: pointer; }
+        .paper-container { margin: 20px auto; width: 80%; }
+        .pdf-viewer { margin-top: 20px; width: 80%; height:800px; border: none; }
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+        .chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index:1000;
+        }
+
+        .chatbot-icon::before {
+            content: "";
+            width: 30px;
+            height: 20px;
+            background-color: black;
+            position: absolute;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .vitgpt-header {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            padding-top:3vh ;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .vitgpt-navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+            background: #161616;
+            padding: 10px 20px;
+            z-index:1000;
+            border-radius: 50px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        /* Default Navbar */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            opacity: 0.7;
+            font-size: 15px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: #222;
+            border-radius: 25px;
+            padding: 5px 10px;
+        }
+
+        .search-box {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            width:15vw;
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-btn:hover {
+            color: #888;
+        }
+
+        /* Contact  */
+        .contact-button {
+            background: transparent;
+            border: 1.5px solid white;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .contact-button:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+        .menu-toggle1 {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            .vitgpt-navbar {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #161616;
+                width: 90%;
+                border-radius: 20px;
+                text-align: center;
+                padding: 15px 0;
+                display: none;
+            }
+        
+            .nav-links.active {
+                display: flex;
+                animation: fadeIn 1s ease;
+            }
+        
+            .nav-links li {
+                margin: 10px 0;
+            }
+        
+            .menu-toggle {
+                display: block;
+            }
+        
+            .contact-button {
+                display: none;
+            }
+        }
+        /* Fade-In Animation */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="vitgpt-header">
+        <nav class="vitgpt-navbar">
+            <a href="../../index.html" class="logo">
+                <img src="../images/vitgptlog03.png" alt="VITGPT Logo">
+            </a>
+            <div class="menu-toggle1" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../index.html">HOME</a></li>
+                <li><a href="./scope.html">SCOPE</a></li>
+                <li><a href="./score.html">SCORE</a></li>
+                <li><a href="./select.html">SELECT</a></li>
+                <li><a href="./sense.html">SENSE</a></li>
+                <li><a href="./other.html">OTHER</a></li>
+            </ul>
+    
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <a href="./assets/codes/upload.html" class="contact-button">UPLOAD</a>
+        </nav>
+    </header>
+    <div class="header">Papers - Operating Systems [BCSE303L] FAT F1 2018</div>
+    <a href="./assets/codes/askme.html"><div class="chatbot-icon"></div></a>
+    <iframe src="../papers/CAT 2_BENG101L.pdf" class="pdf-viewer"></iframe>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            const mobileSearch = document.querySelector('.mobile-container');
+            nav.classList.toggle('active');
+            mobileSearch.style.display = nav.classList.contains('active') ? 'flex' : 'none';
+            }
+    </script>
+</body>
+</html>
