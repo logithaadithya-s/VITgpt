@@ -7,6 +7,38 @@
     <link rel="stylesheet" href="stylescope.css"/>
     <script src="../../script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+        const ai = new GoogleGenAI({ apiKey: "AIzaSyDMHk2yV4d87GPgipbsSGSvLWYjuIL7m80" });
+
+        async function main() {
+          const chat = ai.chats.create({
+            model: "gemini-2.0-flash",
+            history: [
+              {
+                role: "user",
+                parts: [{ text: "Hello" }],
+              },
+              {
+                role: "model",
+                parts: [{ text: "Great to meet you. What would you like to know?" }],
+              },
+            ],
+          });
+      
+          const response1 = await chat.sendMessage({
+            message: "I have 2 dogs in my house.",
+          });
+          console.log("Chat response 1:", response1.text);
+      
+          const response2 = await chat.sendMessage({
+            message: "How many paws are in my house?",
+          });
+        alert("Chat response 2:", response2.text);
+        }
+
+        await main();
+      </script>      
 </head>
 <body>
     <header class="vitgpt-header">
@@ -39,7 +71,7 @@
     </header>
     <div class="maincontainer">
         <div class="scope-container">
-            <div class="scopename">SCOPE</div>
+            <div class="scopename">SELECT</div>
     
             <!-- 1st Year -->
             <div class="year-container">
@@ -81,7 +113,9 @@
             </div>
         </div>
     </div>
-    <a href="./askme.html"><div class="chatbot-icon"></div></a>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="KsGD-ZWe9SclWnmXLZ12E";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
     <footer class="vitgpt-footer">
         <div class="footer-top">
             <p>Your academic companion!</p>

@@ -208,6 +208,24 @@
                 transform: translateY(0) scale(1);
             }
         }
+        .pdf-container {
+            width: 90%;
+            height: 80vh;
+            margin: 20px auto;
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .pdf-container {
+                height: 60vh;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -240,8 +258,10 @@
         </nav>
     </header>
     <div class="header">Papers - Operating Systems [BCSE303L] FAT F1 2018</div>
-    <a href="./assets/codes/askme.html"><div class="chatbot-icon"></div></a>
-    <iframe src="../papers/CAT 2_BENG101L.pdf" class="pdf-viewer"></iframe>
+    <div class="pdf-container">
+        <iframe src="https://drive.google.com/file/d/1G8goBWQV3DrJSyn4RFafZzh1nbVe3zcw/preview" 
+        width="80%" height="800px" style="border: none;"></iframe>
+    </div>
     <script>
         function toggleMenu() {
             const nav = document.querySelector('.nav-links');
@@ -249,6 +269,9 @@
             nav.classList.toggle('active');
             mobileSearch.style.display = nav.classList.contains('active') ? 'flex' : 'none';
             }
+    </script>
+     <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="KsGD-ZWe9SclWnmXLZ12E";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
 </body>
 </html>
