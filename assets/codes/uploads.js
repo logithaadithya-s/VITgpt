@@ -7,7 +7,7 @@ function loadGoogleAPI() {
 function initClient() {
   gapi.client.init({
       apiKey: '',
-      clientId: '534604534114-pm96i3a3m528vna202q0pq5l2825plnu.apps.googleusercontent.com',
+      clientId: '',
       discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
       scope: 'https://www.googleapis.com/auth/drive.file'
   }).then(() => {
