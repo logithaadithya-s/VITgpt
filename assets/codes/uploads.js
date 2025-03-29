@@ -1,94 +1,38 @@
-// Load Google API Client
-function loadGoogleAPI() {
-  gapi.load('client:auth2', initClient);
-}
+const XLSX = require('xlsx');
+const fs = require('fs');
+const path = require('path');
 
-// Initialize Google API Client
-function initClient() {
-  gapi.client.init({
-      apiKey: '',
-      clientId: '',
-      discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
-      scope: 'https://www.googleapis.com/auth/drive.file'
-  }).then(() => {
-      console.log("Google API Initialized");
-  });
-}
+// Load the Excel file
+const filePath = path.join(__dirname, '../papers/Book2.xlsx');
+const workbook = XLSX.readFile(filePath);
 
-// Validate Form before Upload
-function validateForm() {
-  const slot = document.querySelector("select").value;
-  const exam = document.querySelectorAll("select")[1].value;
-  const subject = document.querySelector("input[name='subject']").value;
-  const year = document.getElementById("year").value;
-  const semester = document.querySelectorAll("select")[3].value;
-  const fileInput = document.getElementById("fileInput");
-  const file = fileInput.files[0];
+// Get the first sheet
+const sheetName = workbook.SheetNames[0];
+const worksheet = workbook.Sheets[sheetName];
 
-  if (slot === "Select slot" || exam === "Select exam" || !subject || year === "Select year" || semester === "Select semester" || !file) {
-      alert("Please fill all the fields and select a file before uploading.");
-      return;
-  }
+// Convert the sheet to JSON format (array of objects)
+const jsonData = XLSX.utils.sheet_to_json(worksheet);
 
-  uploadFile(file);
-}
+// Display the existing data (optional)
+console.log('Existing Data:', jsonData);
 
-// Handle file upload
-function uploadFile(file) {
-  const metadata = {
-      name: file.name,
-      mimeType: file.type
-  };
+// New data to be added
+const newRow = {
+  Name: 'John Doe',  // Assuming your columns are 'Name', 'Age', etc.
+  Age: 30,
+  City: 'New York'
+};
 
-  const formData = new FormData();
-  formData.append("metadata", new Blob([JSON.stringify(metadata)], { type: "application/json" }));
-  formData.append("file", file);
+// Add the new row of data
+jsonData.push(newRow);
 
-  fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart", {
-      method: "POST",
-      headers: new Headers({
-          Authorization: `Bearer ${gapi.auth.getToken().access_token}`
-      }),
-      body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-      console.log("File uploaded:", data);
-      createWordDocument(file.name, data.id);
-  })
-  .catch(error => console.error("Upload Error:", error));
-}
+// Convert the updated JSON data back to a worksheet
+const updatedWorksheet = XLSX.utils.json_to_sheet(jsonData);
 
-// Create a Word Document with file details
-function createWordDocument(fileName, fileId) {
-  const content = `Uploaded File: ${fileName}\nFile ID: ${fileId}\nUploaded on: ${new Date().toLocaleString()}`;
-  const blob = new Blob([content], { type: "text/plain" });
+// Replace the old worksheet with the updated one
+workbook.Sheets[sheetName] = updatedWorksheet;
 
-  const metadata = {
-      name: "UploadDetails.docx",
-      mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-  };
+// Write the updated workbook back to the file
+XLSX.writeFile(workbook, filePath);
 
-  const formData = new FormData();
-  formData.append("metadata", new Blob([JSON.stringify(metadata)], { type: "application/json" }));
-  formData.append("file", blob);
-
-  fetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart", {
-      method: "POST",
-      headers: new Headers({
-          Authorization: `Bearer ${gapi.auth.getToken().access_token}`
-      }),
-      body: formData
-  })
-  .then(response => response.json())
-  .then(data => console.log("Word document saved:", data))
-  .catch(error => console.error("Document Save Error:", error));
-}
-
-// Load Google API script
-document.addEventListener("DOMContentLoaded", () => {
-  const script = document.createElement("script");
-  script.src = "https://apis.google.com/js/api.js";
-  script.onload = loadGoogleAPI;
-  document.body.appendChild(script);
-});
+console.log('New data added successfully!');

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Papers</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <style>
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
@@ -189,20 +190,20 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin-bottom:10px;
-            margin-top:15vh;
+            margin-bottom:7vh;
+            margin-top:20vh;
         }
         .container {
             background: #1E1E1E;
             padding: 25px;
             border-radius: 12px;
-            width: 29vw;
+            width: 34vw;
             text-align: center;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
         .container h1 {
             color: #f8645c;
-            margin-bottom: 20px;
+            margin-bottom: 5vh;
             font-size: 24px;
         }
         select, input {
@@ -264,7 +265,6 @@
         }
 
         .vitgpt-footer {
-            background-color: #111;
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -447,46 +447,47 @@
         <button onclick="validateForm()">Upload</button>
         <input type="reset" id="reset" style="display: ;">
     </div>
-    <div class="container cont">
-        <h1>UPLOAD NOTES</h1>
-        <label>Subject:</label>
-        <input list="courses" class ="subject123" name ="subject" placeholder="Search for subject...">
-        <datalist id="courses">
-        <option value="Chemical Engineering Thermodynamics [BCHE202L]">
-        <option value="Mechanical Operations [BCHE301L]">
-        <option value="Basic Electrical and Electronics Engineering [IEEE102L]">
-        <option value="Technical English Communication [BENG101L]">
-        <option value="Principles of Chemical Engineering [BBIT201L]">
-        <option value="Technical English Communication [IENG101L]">
-        <option value="Calculus [IMAT101L]">
-        <option value="Basic Electrical and Electronics Engineering [BEEE102L]">
-    </datalist>
-        
-        <label>Year:</label>
-        <select id="year">
-            <option>Select year</option>
-            <option value=2024>2024</option>
-            <option value=2023>2023</option>
-        </select>
-
-        <label>Semester Selection:</label>
-        <select>
-            <option>Select semester</option>
-            <option>Fall semester</option>
-            <option>Winter semester</option>
-        </select>
-        
-        <div class="upload-box" onclick="document.getElementById('fileInput').click()">
-            Drag 'n' drop some files here, or <span style="color:rgb(136, 129, 129); text-decoration: underline;">click</span> to select files
-        </div>
-        <input type="file" id="fileInput" multiple style="display: none;">
-        
-        <button onclick="validateForm()">Upload</button>
-        <input type="reset" id="reset" style="display: ;">
-    </div>
     </div>
     <footer class="vitgpt-footer">
-        <div class="footer-top">
+        <div class="body123" style="margin-top:-10vh;">
+            <div class="container">
+                <h1>UPLOAD NOTES</h1>
+                <label>Subject:</label>
+                <input list="courses" class ="subject123" name ="subject" placeholder="Search for subject...">
+                <datalist id="courses">
+                <option value="Chemical Engineering Thermodynamics [BCHE202L]">
+                <option value="Mechanical Operations [BCHE301L]">
+                <option value="Basic Electrical and Electronics Engineering [IEEE102L]">
+                <option value="Technical English Communication [BENG101L]">
+                <option value="Principles of Chemical Engineering [BBIT201L]">
+                <option value="Technical English Communication [IENG101L]">
+                <option value="Calculus [IMAT101L]">
+                <option value="Basic Electrical and Electronics Engineering [BEEE102L]">
+            </datalist>
+                
+                <label>Year:</label>
+                <select id="year">
+                    <option>Select year</option>
+                    <option value=2024>2024</option>
+                    <option value=2023>2023</option>
+                </select>
+                
+                <label>Semester Selection:</label>
+                <select>
+                    <option>Select semester</option>
+                    <option>Fall semester</option>
+                    <option>Winter semester</option>
+                </select>
+                
+                <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+                    Drag 'n' drop some files here, or <span style="color:rgb(136, 129, 129); text-decoration: underline;">click</span> to select files
+                </div>
+                <input type="file" id="fileInput" multiple style="display: none;">
+                
+                <button onclick="validateForm()">Upload</button>
+                <input type="reset" id="reset" style="display: ;">
+            </div>
+        <!-- <div class="footer-top">
             <p>Your academic companion!</p>
             <h1>Let's Elevate Learning</h1>
         </div>
@@ -498,7 +499,7 @@
             </div>
     
             <div class="footer-column">
-                <a href="./askme.html">
+                <a href="./upload.html">
                 <button class="quote-btn">Get Started</button>
                 </a>
             </div>
@@ -520,7 +521,7 @@
         <div class="footer-bottom">
             <p>© 2025 VITGPT. All Rights Reserved.</p>
             <a href="#">Back to Top ↑</a>
-        </div>
+        </div> -->
     </footer>
     <script src="./uploads.js"></script>
 </body>
