@@ -6,6 +6,23 @@
     <title>Paper</title>
     <link rel="stylesheet" href="./style1.css"/>
     <script src="../../script.js"></script>
+    <style>
+        #year-2024, #year-2023 {
+            display: flex;
+            flex-wrap: wrap; /* Ensures papers wrap properly */
+            gap: 15px; /* Adds spacing between papers */
+            align-items: flex-start; /* Aligns items at the top */
+        }
+
+        .paper-card {
+            /* Adjust width */
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -27,8 +44,19 @@
             </ul>
     
             <div class="search-container">
-                <input type="text" class="search-box" placeholder="Search...">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <input type="text" class="search-box" id="searchInput" placeholder="Search..." list="subjects">
+                
+                <!-- Datalist for subjects -->
+                <datalist id="subjects">
+                    <option value="Mathematics1">
+                    <option value="Physics">
+                    <option value="Chemistry">
+                    <option value="BasicElectricalEngineering">
+                    <option value="Computer Science">
+                    <!-- Add more subjects as needed -->
+                </datalist>
+        
+                <button class="search-btn" id="searchButton"><i class="fas fa-search"></i></button>
             </div>
             <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -40,26 +68,36 @@
     <div class="container">
         <h1 id="subjecthead">Example subject Papers</h1>
         <div class="filters">
-            <button class="filter-btn" onclick="filterPapers('CAT-1')">CAT-1</button>
-            <button class="filter-btn active" onclick="filterPapers('CAT-2')">CAT-2</button>
-            <button class="filter-btn" onclick="filterPapers('FATS')">FATS</button>
+    
+            <!-- Filter Buttons -->
+            <button class="filter-btn active" onclick="filterPapers('CAT1')">CAT 1</button>
+            <button class="filter-btn" onclick="filterPapers('CAT2')">CAT 2</button>
+            <button class="filter-btn" onclick="filterPapers('FAT')">FAT</button>
             <button class="filter-btn" onclick="filterPapers('NOTES')">NOTES</button>
-        </div>
         
-        <div class="year-section">
+            <!-- Paper Containers -->
+        </div>
+    
+        <!-- Filter Buttons -->
+        <h2>2023-2024</h2>
+        <div id="year-2024"></div>
+
+        <h2>2022-2023</h2>
+        <div id="year-2023" class="sn"></div>
+        <!-- <div class="year-section">
             <h2>2023-2024</h2>
             <div class="paper-container" id="year-2024">
                 <div class="paper-card" data-category="CAT-2">
                     <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2023 - A1+TA1</p>
-                    <a href="./paperview.html" class="view-btn">View Paper</a>
+                    <a href="./paperview.html?link=https://drive.google.com/file/d/1G8goBWQV3DrJSyn4RFafZzh1nbVe3zcw/preview" class="view-btn">View Paper</a>
                 </div>
                 <div class="paper-card" data-category="CAT-2">
                     <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2023 - A2+TA2</p>
-                    <a href="./paperview.html" class="view-btn">View Paper</a>
+                    <a href="./paperview.html?link=https://drive.google.com/file/d/1G8goBWQV3DrJSyn4RFafZzh1nbVe3zcw/preview" class="view-btn">View Paper</a>
                 </div>
             </div>
         </div>
@@ -71,16 +109,15 @@
                     <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2022 - A1+TA1</p>
-                    <a href="./paperview.html" class="view-btn">View Paper</a>
+                    <a href="./paperview.html?link=https://drive.google.com/file/d/1G8goBWQV3DrJSyn4RFafZzh1nbVe3zcw/preview" class="view-btn">View Paper</a>
                 </div>
                 <div class="paper-card" data-category="CAT-2">
                     <h3 class="subjectpaper">Example subject</h3>
                     <p class="category">CAT-2</p>
                     <p class="date">10/8/2022 - A2+TA2</p>
-                    <a href="./paperview.html" class="view-btn">View Paper</a>
+                    <a href="./paperview.html?link=https://drive.google.com/file/d/1G8goBWQV3DrJSyn4RFafZzh1nbVe3zcw/preview" class="view-btn">View Paper</a>
                 </div>
-            </div>
-        </div>
+            </div> -->
     </div>
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="KsGD-ZWe9SclWnmXLZ12E";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
@@ -120,6 +157,21 @@
             <a href="#">Back to Top ↑</a>
         </div>
     </footer>
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+    // Get the value from the search input field
+    const searchValue = document.getElementById('searchInput').value.trim();
+    
+    // If the search field is not empty
+    if (searchValue !== "") {
+        // Redirect to the new HTML page with the search value
+        // Example: Redirects to 'Mathematics.html' or 'Science.html'
+        window.location.href = "./paper.html?subject="+searchValue;
+    } else {
+        alert('Please enter a search term!');
+    }
+});
+    </script>
     <script src="./paper.js"></script>
 </body>
 </html>

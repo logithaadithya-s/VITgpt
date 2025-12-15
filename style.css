@@ -607,3 +607,32 @@ a{
     position: absolute;
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%);
 }
+/* Style for the search container */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the search input */
+.search-box {
+    padding: 8px;
+    width: 200px;
+}
+
+/* Style for the search button */
+.search-btn {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-btn i {
+    font-size: 16px;
+}
+
+/* Optional: Style the datalist options (limited customization) */
+datalist {
+    font-family: Arial, sans-serif;
+}

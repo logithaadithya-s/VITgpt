@@ -25,11 +25,22 @@
                 <li><a href="./sense.html">SENSE</a></li>
                 <li><a href="./other.html">OTHER</a></li>
             </ul>
-    
             <div class="search-container">
-                <input type="text" class="search-box" placeholder="Search...">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <input type="text" class="search-box" id="searchInput" placeholder="Search..." list="subjects">
+                
+                <!-- Datalist for subjects -->
+                <datalist id="subjects">
+                    <option value="Mathematics1">
+                    <option value="Physics">
+                    <option value="Chemistry">
+                    <option value="BasicElectricalEngineering">
+                    <option value="Computer Science">
+                    <!-- Add more subjects as needed -->
+                </datalist>
+        
+                <button class="search-btn" id="searchButton"><i class="fas fa-search"></i></button>
             </div>
+            
             <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
@@ -120,5 +131,20 @@
             <a href="#">Back to Top ↑</a>
         </div>
     </footer>
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+    // Get the value from the search input field
+    const searchValue = document.getElementById('searchInput').value.trim();
+    
+    // If the search field is not empty
+    if (searchValue !== "") {
+        // Redirect to the new HTML page with the search value
+        // Example: Redirects to 'Mathematics.html' or 'Science.html'
+        window.location.href = "./paper.html?subject="+searchValue;
+    } else {
+        alert('Please enter a search term!');
+    }
+});
+    </script>
 </body>
 </html>

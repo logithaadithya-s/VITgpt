@@ -257,7 +257,7 @@
             <a href="./assets/codes/upload.html" class="contact-button">UPLOAD</a>
         </nav>
     </header>
-    <div class="header">Papers - Operating Systems [BCSE303L] FAT F1 2018</div>
+    <div class="header"></div>
     <div class="pdf-container">
         <iframe src="https://drive.google.com/file/d/1G8goBWQV3DrJSyn4RFafZzh1nbVe3zcw/preview" 
         width="80%" height="800px" style="border: none;"></iframe>
@@ -269,9 +269,36 @@
             nav.classList.toggle('active');
             mobileSearch.style.display = nav.classList.contains('active') ? 'flex' : 'none';
             }
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pdfLink = urlParams.get("link");
+
+            if (pdfLink) {
+                document.querySelector(".pdf-container iframe").src = pdfLink;
+                
+            } else {
+                console.error("No 'link' parameter found in the URL.");
+            }
+        });
+
     </script>
      <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="KsGD-ZWe9SclWnmXLZ12E";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+    // Get the value from the search input field
+    const searchValue = document.getElementById('searchInput').value.trim();
+    
+    // If the search field is not empty
+    if (searchValue !== "") {
+        // Redirect to the new HTML page with the search value
+        // Example: Redirects to 'Mathematics.html' or 'Science.html'
+        window.location.href = "./paper.html?subject="+searchValue;
+    } else {
+        alert('Please enter a search term!');
+    }
+});
     </script>
 </body>
 </html>

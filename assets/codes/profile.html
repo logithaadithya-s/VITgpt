@@ -95,34 +95,6 @@
     </style>
 </head>
 <body>
-    <header class="vitgpt-header">
-        <nav class="vitgpt-navbar">
-            <a href="../../index.html" class="logo">
-                <img src="../images/vitgptlog03.png" alt="VITGPT Logo">
-            </a>
-            <div class="menu-toggle1" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../../index.html">HOME</a></li>
-                <li><a href="./scope.html">SCOPE</a></li>
-                <li><a href="./score.html">SCORE</a></li>
-                <li><a href="./select.html">SELECT</a></li>
-                <li><a href="./sense.html">SENSE</a></li>
-                <li><a href="./other.html">OTHER</a></li>
-            </ul>
-    
-            <div class="search-container">
-                <input type="text" class="search-box" placeholder="Search...">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-    
-            <a href="./upload.html" class="contact-button">UPLOAD</a>
-        </nav>
-    </header>
     <div class="container" id="form-container">
         <h2 id="form-title">Registration</h2>
         <div class="input-box">
@@ -139,8 +111,8 @@
         </div>
         <button class="register-btn" id="submit-btn">Register</button>
         <p class="login-link" id="toggle-form">Already have an account? <a href="#" id="toggle-link" onclick="change()">Login</a></p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnb0bP7wKWhNHmPHQmu3AYxD7ehR9bMtJNrMsQLCdArvHHVg/viewform?usp=dialog">forgot password</a>
     </div>
-
     <script>
         const toggleLink = document.getElementById("toggle-link");
         const formTitle = document.getElementById("form-title");
@@ -148,22 +120,53 @@
         const nameField = document.getElementById("name-field");
         const termsBox = document.getElementById("terms-box");
         const toggleFormText = document.getElementById("toggle-form");
-
-        function change(){
+    
+        function change() {
             if (submitBtn.textContent === "Register") {
                 formTitle.textContent = "Login";
                 submitBtn.textContent = "Login";
-                nameField.style.display="none";
-                termsBox.style.display="none";
-                toggleFormText.innerHTML = "Don't have an account? <a href='#' id='toggle-link' onclick='change()'>Register</a>";
+                nameField.style.display = "none";
+                termsBox.style.display = "none";
+                toggleFormText.innerHTML = `Don't have an account? <a href="#" id="toggle-link" onclick="change()">Register</a>`;
             } else {
                 formTitle.textContent = "Registration";
                 submitBtn.textContent = "Register";
-                nameField.style.display="block";
-                termsBox.style.display="block";
-                toggleFormText.innerHTML = "Already have an account? <a href='#' id='toggle-link' onclick='change()'>Login</a>";
+                nameField.style.display = "block";
+                termsBox.style.display = "block";
+                toggleFormText.innerHTML = `Already have an account? <a href="#" id="toggle-link" onclick="change()">Login</a>`;
             }
         }
+    
+        // ✅ FORM SUBMIT HANDLER
+        submitBtn.addEventListener("click", async () => {
+            const name = document.getElementById("name-field").value;
+            const email = document.getElementById("email-field").value;
+            const password = document.getElementById("password-field").value;
+            const isRegister = submitBtn.textContent === "Register";
+    
+            try {
+                const endpoint = isRegister ? 'register' : 'login';
+                const body = isRegister ? { name, email, password } : { email, password };
+    
+                const response = await fetch(`http://localhost:3001/${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                const result = await response.json();
+                if (result.message === "Login successful") {
+                        localStorage.setItem("user", JSON.stringify(result.user));
+                        window.location.href = "../../profile1.html";
+                } else {
+                    alert(result.message);
+                }
+
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Something went wrong");
+            }
+        });
     </script>
+    
 </body>
 </html>
